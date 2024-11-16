@@ -20,8 +20,8 @@ class LoginController extends Controller
       { 
   
           $request->validate([
-              'email' => 'required',
-              'password' => 'required'
+              'email' => 'required|email',
+              'password' => 'required|min:6'
           ], [
               'email.required' => 'Email wajib diisi',
               'password.required' => 'Password wajib diisi'
@@ -44,7 +44,8 @@ class LoginController extends Controller
               }
               
           } else {
-              return redirect('')->with('failed', 'Username dan password yang dimasukkan tidak sesuai');
+              // jika gagal login
+            return redirect()->back()->withErrors(['email' => 'Username dan password yang dimasukkan tidak sesuai'])->withInput();
           }
       }
   

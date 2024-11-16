@@ -12,11 +12,20 @@
                         Swal.fire('Berhasil Register, Silahkan login!');
                     </script>
                 @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $item)
+                                <li>{{ $item }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ route('login.submit') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" value="{{ old('email') }}" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>

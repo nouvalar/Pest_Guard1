@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +32,14 @@ Route::get('/register', [RegisController::class, 'showRegistrationForm'])->name(
 Route::post('/register', [RegisController::class, 'register'])->name('register.submit');
 
 Route::middleware(['auth', 'userakses:user'])->group(function () {
+    // Halaman utama untuk user
     Route::get('/home', function () {
         return view('home');
     })->name('home');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // Rute untuk edit profil
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');     // Rute untuk update profil
 });
+
 
 Route::middleware(['auth', 'userakses:admin'])->group(function () {
     Route::get('/admin', function () {

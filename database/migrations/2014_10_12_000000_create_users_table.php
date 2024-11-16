@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('role',['admin','user'])->default('user');
             $table->string('password');
+            $table->string('no_tlp')->nullable(); 
+            $table->text('alamat')->nullable(); 
             $table->timestamps();
         });
     }

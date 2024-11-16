@@ -25,21 +25,16 @@
 
 <body id="page-top">
 
-    @if (Request::is('home')) 
-        <!-- Sidebar hanya muncul di halaman home -->
-        @include('partials.sidebar')
-    @else
-        <!-- Navbar hanya muncul di halaman selain home -->
-        @include('partials.navbar')
-    @endif
+   <!-- Header -->
+   @yield('header') {{-- Navbar atau Sidebar akan dimasukkan di sini --}}
 
-    <!-- Main Content -->
-    <div class="container-fluid">
-        @yield('content')
-    </div>
+   <!-- Main Content -->
+   <div class="container-fluid">
+       @yield('content')
+   </div>
 
-    <!-- Footer -->
-    @include('partials.footer')
+   <!-- Footer -->
+   @include('partials.footer')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('tmplt/vendor/jquery/jquery.min.js') }}"></script>

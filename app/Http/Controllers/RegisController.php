@@ -21,6 +21,8 @@ class RegisController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:6', 
+            'no_tlp' => 'required|string|min:10|max:15',
+            'alamat' => 'required|string|max:500', 
         ]);
 
         // Buat user baru
@@ -29,6 +31,8 @@ class RegisController extends Controller
             'email' => $request->email,
             'role' => 'user',  // Atur role default
             'password' => bcrypt($request->password),
+            'no_tlp' => $request->no_tlp,
+            'alamat' => $request->alamat,
         ]);
 
         // Redirect ke halaman login setelah registrasi sukses
