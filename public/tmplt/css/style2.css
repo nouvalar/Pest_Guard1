@@ -284,3 +284,293 @@ body.register-body {
 }
 
 
+/* Logo */
+.sidebar-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.sidebar-brand-text span {
+  color: #29593D;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Edit Profile */
+
+/* Reset untuk memastikan semua elemen memenuhi layar */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Konten utama (form dan elemen lainnya) */
+.edit-profile-container {
+  margin-left: 250px;
+  padding: 20px;
+  min-height: 100vh; 
+  background-color: #f9f9f9; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pastikan header atau navbar tidak bertabrakan */
+header {
+  position: relative;
+  z-index: 5; 
+}
+
+/* Styling untuk form box */
+.form-box {
+  background: white; /* Warna latar belakang form */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 400px; /* Lebar maksimal form */
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* Header form */
+.form-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Input group styling */
+.edit-profile-input-group {
+  margin-bottom: 15px;
+}
+
+.edit-profile-input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.edit-profile-input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.edit-profile-input-group input:focus {
+  border-color: #00b4d8;
+}
+
+/* Tombol update */
+.edit-profile-btn {
+  display: block;
+  width: 100%;
+  background: #00b4d8;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-profile-btn:hover {
+  background: #0077b6;
+}
+
+/* Alert styling */
+.edit-profile-alert {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .form-box {
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+/* Pelaporan CSS */
+/* Reset margin dan padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Page container */
+.page-report-custom {
+  background: url('/assets/img/bgwide.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Form container styling */
+.report-container-custom {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Header styling */
+.report-header-custom h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Form group styling */
+.form-group-custom {
+  text-align: left;
+  position: relative;
+}
+
+.form-group-custom label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: block;
+  color: #555555;
+}
+
+/* Input container */
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #ffffff;
+  transition: border 0.3s ease-in-out;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0;
+  color: #333333;
+  background: transparent;
+}
+
+.input-container input::placeholder {
+  color: #bbbbbb;
+}
+
+.input-container:focus-within {
+  border-color: #0077b6;
+}
+
+/* Icon inside input */
+.icon-calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.icon-calendar img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Button styling */
+.next-button-custom {
+  background: linear-gradient(90deg, #00b4d8, #48cae4);
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.next-button-custom:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .report-container-custom {
+    width: 90%;
+  }
+}
+
+/* Pengingat CSS */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+

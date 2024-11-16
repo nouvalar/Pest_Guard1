@@ -26,15 +26,12 @@
 <body id="page-top">
 
    <!-- Header -->
-   @yield('header') {{-- Navbar atau Sidebar akan dimasukkan di sini --}}
+    @include('partials.navbar') {{-- Navbar akan dimasukkan di sini --}}
 
    <!-- Main Content -->
    <div class="container-fluid">
        @yield('content')
    </div>
-
-   <!-- Footer -->
-   @include('partials.footer')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('tmplt/vendor/jquery/jquery.min.js') }}"></script>

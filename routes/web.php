@@ -31,13 +31,26 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::get('/register', [RegisController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisController::class, 'register'])->name('register.submit');
 
-Route::middleware(['auth', 'userakses:user'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     // Halaman utama untuk user
     Route::get('/home', function () {
         return view('home');
     })->name('home');
+
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // Rute untuk edit profil
-    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');     // Rute untuk update profil
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update'); // Rute untuk update profil
+
+    Route::get('/pengingat', function () {
+        return view('pengingat'); // Halaman Pengingat
+    })->name('pengingat');
+
+    Route::get('/pelaporan', function () {
+        return view('pelaporan'); // Halaman pelaporan
+    })->name('pelaporan');
+
+    Route::get('/petunjuk', function () {
+        return view('petunjuk'); // Halaman petunjuk
+    })->name('petunjuk');
 });
 
 
