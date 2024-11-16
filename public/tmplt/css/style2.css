@@ -1,0 +1,286 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Dashboard */
+.dashboard-container {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/img/bgwide.jpeg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+/* About Section Fullscreen dengan Blur */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Tinggi layar penuh */
+  width: 100vw; /* Lebar layar penuh */
+  text-align: center;
+  color: white;
+  position: relative; /* Penting agar elemen pseudo tetap di belakang */
+  overflow: hidden;
+}
+
+/* Efek Blur pada Background */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/img/bgwide.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(10px); /* Efek blur */
+  z-index: -1; /* Pastikan blur berada di belakang konten */
+  opacity: 0.8; /* Sedikit transparan agar teks lebih jelas */
+}
+
+/* Teks pada About Section */
+.about-text {
+  position: relative; /* Agar tidak terpengaruh efek blur */
+  max-width: 800px;
+  padding: 20px;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
+}
+  
+
+/* Navbar */
+.bg-green {
+  background-color: #8ac184 !important;
+}
+
+.navbar .navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .nav-link {
+  color: white !important;
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.navbar .nav-link.btn {
+  color: #8ac184 !important;
+  background-color: white !important;
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+
+
+/* Navbar pada Halaman Login & Signup */
+.navbar {
+  position: fixed; /* Tetap di posisi atas layar */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Sesuaikan tinggi navbar */
+  background-color: rgba(0, 0, 0, 0.8); /* Warna background untuk navbar */
+  z-index: 100; /* Pastikan di atas elemen lainnya */
+}
+
+/* CSS untuk halaman login */
+/* Reset Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Body untuk Login */
+body.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("/assets/img/bgwide.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(8px);
+  padding-top: 60px; /* Berikan ruang untuk navbar */
+}
+
+/* Wrapper untuk memastikan form berada di tengah */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Kurangi tinggi navbar */
+  width: 100vw;
+  position: relative; /* Pastikan tidak menutupi navbar */
+  z-index: 15; /* Lebih rendah dari navbar */
+}
+
+/* Form Container */
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Field */
+.form-group {
+  margin-top: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #8ac184;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #76aa70;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* CSS untuk halaman Register */
+body.register-body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("/assets/img/bgwide.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+}
+
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.form-box {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #218838;
+}
+
+
