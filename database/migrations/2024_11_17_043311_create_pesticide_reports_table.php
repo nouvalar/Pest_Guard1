@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('pesticide_reports', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('nama');
             $table->date('tanggal');
             $table->time('jam');
             $table->string('nama_pestisida');

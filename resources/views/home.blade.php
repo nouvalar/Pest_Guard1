@@ -6,7 +6,7 @@
 
 @section('content')
     <!-- Main Content -->
-    <div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="container-fluid d-flex justify-content-center" style="height: 100vh; margin-top: 70px;">
         <div class="text-center">
             <h1 class="mb-4">Selamat Datang, Petani!</h1>
             <div class="main-content bg-secondary text-white mx-auto p-4" style="width: 800px; height: auto; border-radius: 20px;">

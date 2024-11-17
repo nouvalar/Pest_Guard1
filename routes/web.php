@@ -54,6 +54,10 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
     Route::get('/petunjuk', function () {
         return view('petunjuk'); // Halaman petunjuk
     })->name('petunjuk');
+
+    Route::get('/bookmark', function () {
+        return view('bookmark'); // Halaman bookmark
+    })->name('bookmark');
 });
 
 

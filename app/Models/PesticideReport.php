@@ -10,6 +10,8 @@ class PesticideReport extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'nama',
         'tanggal',
         'jam',
         'nama_pestisida',
@@ -17,7 +19,6 @@ class PesticideReport extends Model
         'dosis',
         'catatan',
         'document_path',
-        'user_id',
         'status_verifikasi',
     ];
 

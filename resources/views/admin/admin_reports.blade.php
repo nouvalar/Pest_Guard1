@@ -41,6 +41,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-light">
                         <tr>
+                            <th>Nama</th>
                             <th>Tanggal</th>
                             <th>Waktu</th>
                             <th>Nama Pestisida</th>
@@ -52,6 +53,7 @@
                     <tbody>
                         @forelse ($pendingReports as $report)
                             <tr>
+                                <td>{{ $report->nama }}</td>
                                 <td>{{ $report->tanggal }}</td>
                                 <td>{{ $report->jam }}</td>
                                 <td>{{ $report->nama_pestisida }}</td>
@@ -98,6 +100,7 @@
                 <table class="table table-bordered">
                     <thead class="thead-light">
                         <tr>
+                            <th>Nama</th>
                             <th>Tanggal</th>
                             <th>Waktu</th>
                             <th>Nama Pestisida</th>
@@ -108,6 +111,7 @@
                     <tbody>
                         @forelse ($verifiedReports as $report)
                             <tr>
+                                <td>{{ $report->nama }}</td>
                                 <td>{{ $report->tanggal }}</td>
                                 <td>{{ $report->jam }}</td>
                                 <td>{{ $report->nama_pestisida }}</td>

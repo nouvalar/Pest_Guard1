@@ -13,21 +13,32 @@
     <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <!-- Slider Container -->
-        <div class="page-pelaporan">
+        <div class="page-pelaporan" style="margin-top: -130px; min-height: 100vh;">
             <div class="swiper form-container-pelaporan">
                 <!-- Wrapper untuk Slide -->
                 <div class="swiper-wrapper">
                     <!-- Slide Pertama -->
                     <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Pelaporan Penggunaan Pestisida</h2>
+                        <h2 style="color: black; font-weight: bold;">Nama</h2>
                         <hr>
-                        <input type="date" id="tanggal" name="tanggal">
+                        <input type="text" id="nama" name="nama">
                         <div class="navigation-buttons">
                             <button class="swiper-button-next next-btn"></button>
                         </div>
                     </div>
 
                     <!-- Slide Kedua -->
+                    <div class="swiper-slide">
+                        <h2 style="color: black; font-weight: bold;">Pelaporan Penggunaan Pestisida</h2>
+                        <hr>
+                        <input type="date" id="tanggal" name="tanggal">
+                        <div class="navigation-buttons">
+                            <button class="swiper-button-prev prev-btn"></button>
+                            <button class="swiper-button-next next-btn"></button>
+                        </div>
+                    </div>
+
+                    <!-- Slide Ketiga -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Jam Penggunaan</h2>
                         <hr>
@@ -38,7 +49,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide Ketiga -->
+                    <!-- Slide Keempat -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Nama Pestisida</h2>
                         <hr>
@@ -49,7 +60,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide Keempat -->
+                    <!-- Slide Kelima -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Jenis Pestisida</h2>
                         <hr>
@@ -60,7 +71,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide Kelima -->
+                    <!-- Slide Keenam -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Dosis/Jumlah</h2>
                         <hr>
@@ -71,7 +82,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide Keenam -->
+                    <!-- Slide Ketujuh -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Catatan Tambahan</h2>
                         <hr>
@@ -82,7 +93,7 @@
                         </div>
                     </div>
 
-                    <!-- Slide Ketujuh -->
+                    <!-- Slide kedelapan -->
                     <div class="swiper-slide">
                         <h2 style="color: black; font-weight: bold;">Upload Dokumen</h2>
                         <hr>

@@ -22,7 +22,7 @@ class ProfileController extends Controller
             'no_tlp' => 'nullable|string|max:15',
             'email' => 'required|email|max:255|unique:users,email,' . auth()->id(),
             'alamat' => 'nullable|string|max:255',
-            'password' => 'nullable|string|min:8',
+            'password' => 'nullable|string|min:6',
         ]);
 
         // Ambil data pengguna yang login
@@ -39,6 +39,6 @@ class ProfileController extends Controller
             $user->save();
         }
 
-        return redirect()->route('profile.edit')->with('success', 'Profil berhasil diperbarui!');
+        return redirect()->route('login')->with('success', 'Profil berhasil diperbarui!');
     }
 }

@@ -14,6 +14,7 @@ class PesticideReportController extends Controller
     {
         // Validasi input
         $request->validate([
+            'nama' => 'required|string|max:255',
             'tanggal' => 'required|date',
             'jam' => 'required|date_format:H:i',
             'nama_pestisida' => 'required|string|max:255',
@@ -23,7 +24,7 @@ class PesticideReportController extends Controller
             'document' => 'nullable|file|mimes:pdf,doc,docx,jpeg,png,jpg|max:2048',
         ]);
 
-        $data = $request->only(['tanggal', 'jam', 'nama_pestisida', 'jenis_pestisida', 'dosis', 'catatan']);
+        $data = $request->only(['nama', 'tanggal', 'jam', 'nama_pestisida', 'jenis_pestisida', 'dosis', 'catatan']);
 
         // Jika ada file, simpan di storage
         if ($request->hasFile('document')) {
@@ -50,7 +51,7 @@ class PesticideReportController extends Controller
             ->get()
             ->map(function ($reminder) use ($currentDate) {
                 $reminderDate = Carbon::parse($reminder->tanggal . ' ' . $reminder->jam);
-                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addDays(2))
+                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addMinutes(1))
                     ? 'Terlaksana'
                     : 'Belum Terlaksana';
                 return $reminder;

@@ -25,7 +25,7 @@
 
 
             <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" >
 
                 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                 <li class="nav-item dropdown no-arrow d-sm-none">
@@ -51,17 +51,17 @@
                 </li>
 
                 <!-- Nav Item - Alerts -->
-                <li class="nav-item dropdown no-arrow mx-1">
+                <li class="nav-item dropdown no-arrow mx-1"  >
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bell fa-fw" style="color: #000000;"></i>
+                        <i class="fas fa-bell fa-fw" style="color: #000000;" ></i>
                         <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
+                        <span class="badge badge-danger badge-counter">1</span>
                     </a>
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="alertsDropdown">
-                        <h6 class="dropdown-header">
+                        <h6 class="dropdown-header" style="background-color: #C0E5B7;">
                             Alerts Center
                         </h6>
                         @if (isset($navbarReminders) && $navbarReminders->count() > 0)
@@ -74,7 +74,7 @@
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">{{ $reminder->tanggal }}</div>
-                                        <span class="font-weight-bold">Jadwal Penyemprotan Pestisida</span>
+                                        <span class="font-weight-bold">{{ $reminder->catatan }}</span>
                                     </div>
                                 </a>
                             @endforeach
@@ -90,12 +90,12 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope fa-fw" style="color: #000000;"></i>
                         <!-- Counter - Messages -->
-                        <span class="badge badge-danger badge-counter">7</span>
+                        <span class="badge badge-danger badge-counter">3</span>
                     </a>
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="messagesDropdown">
-                        <h6 class="dropdown-header">
+                        <h6 class="dropdown-header" style="background-color: #C0E5B7;">
                             Message Center
                         </h6>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -195,6 +195,12 @@
                             <span>Petunjuk Penggunaan Pestisida</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/bookmark">
+                            <i class="fas fa-bookmark"></i>
+                            <span>Bookmark</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -217,9 +223,9 @@
                 height: 100vh;
                 position: fixed;
                 left: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                top: 0;
+                padding-top: 70px;
+                /* Jarak dari navbar */
             }
 
             .sidebar-menu ul {
@@ -264,5 +270,10 @@
                 color: #fff;
                 margin-bottom: 15px;
                 font-weight: bold;
+            }
+            
+            .dropdown-item:active,
+            .dropdown-item.active {
+                background-color: #C0E5B7 !important;
             }
         </style>
