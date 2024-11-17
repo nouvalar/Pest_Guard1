@@ -38,29 +38,32 @@
                     <div class="edit-profile-input-group">
                         <label for="name">Nama</label>
                         <input type="text" id="name" name="name" value="{{ old('name', $user->name ?? '') }}"
-                            required>
+                            required style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
                     <div class="edit-profile-input-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" value="{{ old('email', $user->email ?? '') }}"
-                            required>
+                            required style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
                     <div class="edit-profile-input-group">
                         <label for="no_tlp">Nomor Telepon</label>
                         <input type="text" id="no_tlp" name="no_tlp" value="{{ old('no_tlp', $user->no_tlp ?? '') }}"
-                            required>
+                            required style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
                     <div class="edit-profile-input-group">
                         <label for="alamat">Alamat</label>
                         <input type="text" id="alamat" name="alamat" value="{{ old('alamat', $user->alamat ?? '') }}"
-                            placeholder="Masukkan alamat lengkap Anda">
+                            placeholder="Masukkan alamat lengkap Anda"
+                            style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
                     <div class="edit-profile-input-group">
                         <label for="password">Password (Opsional)</label>
                         <input type="password" id="password" name="password"
-                            placeholder="Kosongkan jika tidak ingin mengubah">
+                            placeholder="Kosongkan jika tidak ingin mengubah"
+                            style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
-                    <button type="submit" class="edit-profile-btn">Update</button>
+                    <button type="submit" class="edit-profile-btn"
+                        style="width: 100%; padding: 10px; background-color: #0099cc; color: white; border: none; border-radius: 5px; cursor: pointer;">Update</button>
                 </form>
             @endif
         </div>
