@@ -56,6 +56,8 @@
         @include('partials.sidebar')
     @endif
 
+    @include('partials.footer')
+
     <!-- Main Content -->
     <div class="container-fluid">
         @yield('content')
