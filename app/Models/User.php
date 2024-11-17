@@ -22,8 +22,8 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'no_tlp',  
-        'alamat', 
+        'no_tlp',
+        'alamat',
     ];
 
     /**
@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function pesticideReports()
+    {
+        return $this->hasMany(PesticideReport::class);
+    }
 }

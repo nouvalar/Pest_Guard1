@@ -18,20 +18,22 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('tmplt/css/templt.min.css') }}"  rel="stylesheet">
+    <link href="{{ asset('tmplt/css/templt.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('tmplt/css/style2.css') }}">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 </head>
 
 <body id="page-top">
 
-   <!-- Header -->
+    <!-- Header -->
     @include('partials.navbar') {{-- Navbar akan dimasukkan di sini --}}
 
-   <!-- Main Content -->
-   <div class="container-fluid">
-       @yield('content')
-   </div>
+    <!-- Main Content -->
+    <div class="container-fluid">
+        @yield('content')
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('tmplt/vendor/jquery/jquery.min.js') }}"></script>
@@ -39,6 +41,9 @@
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('tmplt/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('tmplt/js/sb-admin-2.min.js') }}"></script>

@@ -5,43 +5,46 @@
 @endsection
 
 @section('content')
-<div class="d-flex justify-content-center align-items-center vh-100" style="padding-left: 420px;">
-    <div class="container" style="margin-left: 50px; max-width: 800px;">
-        <h1 class="text-center mb-4" style="color: black; font-weight: bold;">Jadwal Penyiraman Pestisida</h1>
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead class="text-center" style="background-color: #29593D; color: white;">
-                    <tr>
-                        <th>Tanggal</th>
-                        <th>Waktu</th>
-                        <th>Aksi</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="align-middle text-center">10 November 2024</td>
-                        <td class="align-middle text-center">08:00 WIB</td>
-                        <td class="align-middle text-center">
-                            <button class="btn btn-success btn-sm">
-                                ✔ Tandai Dilaksanakan
-                            </button>
-                        </td>
-                        <td class="align-middle text-center">Terlaksana</td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle text-center">12 November 2024</td>
-                        <td class="align-middle text-center">08:00 WIB</td>
-                        <td class="align-middle text-center">
-                            <button class="btn btn-warning btn-sm">
-                                ✏️ Edit Pengingat
-                            </button>
-                        </td>
-                        <td class="align-middle text-center">Belum Terlaksana</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="w-100" style="max-width: 800px;">
+            <h1 class="text-center mb-4" style="color: black; font-weight: bold;">Jadwal Penyiraman Pestisida</h1>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Waktu</th>
+                            <th>Nama Pestisida</th>
+                            <th>Status</th>
+                            <th>Documents</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($reminders as $reminder)
+                            <tr>
+                                <td>{{ $reminder->tanggal }}</td>
+                                <td>{{ $reminder->jam }}</td>
+                                <td>{{ $reminder->nama_pestisida }}</td>
+                                <td>
+                                    @if ($reminder->status_verifikasi == 'Terlaksana')
+                                        <span style="color: green;">✔</span> {{ $reminder->status_verifikasi }}
+                                    @else
+                                        <span style="color: red;">✘</span> {{ $reminder->status_verifikasi }}
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($reminder->document_path)
+                                        <a href="{{ asset('storage/' . $reminder->document_path) }}" target="_blank">Lihat
+                                            Dokumen</a>
+                                    @else
+                                        Tidak ada dokumen
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 @endsection

@@ -123,9 +123,8 @@
                                 <div class="status-indicator bg-success"></div>
                             </div>
                             <div class="font-weight-bold">
-                                <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                    problem I've been having.</div>
-                                <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                <div class="text-truncate">Sudahkah Anda melakukan penyemprotan Pestisida?</div>
+                                <div class="small text-gray-500">Agung · 58m</div>
                             </div>
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -135,9 +134,8 @@
                                 <div class="status-indicator"></div>
                             </div>
                             <div>
-                                <div class="text-truncate">I have the photos that you ordered last month, how
-                                    would you like them sent to you?</div>
-                                <div class="small text-gray-500">Jae Chun · 1d</div>
+                                <div class="text-truncate">Pestisida Jenis Baru!!!</div>
+                                <div class="small text-gray-500">Asep · 1d</div>
                             </div>
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -147,21 +145,9 @@
                                 <div class="status-indicator bg-warning"></div>
                             </div>
                             <div>
-                                <div class="text-truncate">Last month's report looks great, I am very happy with
-                                    the progress so far, keep up the good work!</div>
-                                <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-                            </div>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                    alt="...">
-                                <div class="status-indicator bg-success"></div>
-                            </div>
-                            <div>
-                                <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                    told me that people say this to all dogs, even if they aren't good...</div>
-                                <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                <div class="text-truncate">Pestisida yang lalu membuat tanaman menjadi kurang
+                                    berkualitas</div>
+                                <div class="small text-gray-500">Morgan · 2d</div>
                             </div>
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Read More
@@ -209,7 +195,9 @@
         <!-- Sidebar -->
         <div class="sidebar" id="customSidebar">
             <div class="sidebar-menu">
-                <h6 class="menu-heading">Home</h6>
+                <a href="/home">
+                    <h6 class="menu-heading">Home</h6>
+                </a>
                 <ul>
                     <li>
                         <a href="/pengingat">
@@ -237,9 +225,11 @@
         <!-- CSS -->
         <style>
             body {
-                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                /* Halaman memenuhi tinggi layar */
                 margin: 0;
-                padding: 0;
             }
 
             .sidebar {
@@ -253,7 +243,6 @@
                 justify-content: center;
                 align-items: center;
             }
-
 
             .sidebar-menu ul {
                 list-style: none;

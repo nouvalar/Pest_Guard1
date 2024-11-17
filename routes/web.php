@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PesticideReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisController;
 use Illuminate\Support\Facades\Route;
@@ -31,22 +33,23 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 Route::get('/register', [RegisController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisController::class, 'register'])->name('register.submit');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'userakses:user'])->group(function () {
     // Halaman utama untuk user
     Route::get('/home', function () {
         return view('home');
     })->name('home');
 
-    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // Rute untuk edit profil
-    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update'); // Rute untuk update profil
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit'); // Edit profil
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update'); // Update profil
 
-    Route::get('/pengingat', function () {
-        return view('pengingat'); // Halaman Pengingat
-    })->name('pengingat');
+    // Rute pengingat
+    Route::get('/pengingat', [PesticideReportController::class, 'showReminders'])->name('pengingat');
 
+    // Rute pelaporan
     Route::get('/pelaporan', function () {
         return view('pelaporan'); // Halaman pelaporan
     })->name('pelaporan');
+    Route::post('/pelaporan', [PesticideReportController::class, 'store'])->name('pelaporan.store');
 
     Route::get('/petunjuk', function () {
         return view('petunjuk'); // Halaman petunjuk
@@ -54,9 +57,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::middleware(['auth', 'userakses:admin'])->group(function () {
-    Route::get('/admin', function () {
-        return view('admin');
-    })->name('admin');
-});
 
+Route::middleware(['auth', 'userakses:admin'])->group(function () {
+    Route::get('/admin/reports', [AdminController::class, 'showReports'])->name('admin.reports');
+    Route::post('/admin/reports/{id}/verify', [AdminController::class, 'verifyReport'])->name('admin.reports.verify');
+});

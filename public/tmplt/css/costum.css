@@ -1,0 +1,14 @@
+/* Admin CSS */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    margin-left: 250px; /* Pastikan konten utama memiliki margin kiri sesuai dengan lebar sidebar */
+    padding: 20px;
+    min-height: 100vh; /* Pastikan konten utama juga mencakup seluruh tinggi halaman */
+}
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
