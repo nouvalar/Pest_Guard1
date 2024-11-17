@@ -5,4 +5,6 @@
 @endsection
 
 @section('content')
+    <div class="bg-blur"></div>
+
 @endsection

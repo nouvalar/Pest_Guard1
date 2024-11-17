@@ -5,9 +5,10 @@
 @endsection
 
 @section('content')
-    <div class="container d-flex justify-content-center" style="min-height: 100vh; margin-top: 70px;" >
+    <div class="bg-blur"></div>
+    <div class="container d-flex justify-content-center" style="min-height: 100vh; margin-top: 70px;">
         <div class="w-100" style="max-width: 800px;">
-            <h1 class="text-center mb-4" style="color: black; font-weight: bold;">Jadwal Penyiraman Pestisida</h1>
+            <h1 class="text-center mb-4" style="color: white; font-weight: bold;">Jadwal Penyiraman Pestisida</h1>
             <div class="table-responsive">
                 <table class="table">
                     <thead>

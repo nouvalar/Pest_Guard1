@@ -440,10 +440,48 @@ header {
 }
 
 /* Pengingat CSS */
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/img/bgwide.jpeg') center/cover no-repeat; /* Tambahkan gambar background jika diinginkan */
+  filter: blur(6px); /* Efek blur */
+  z-index: -1; /* Agar berada di belakang konten */
+}
+
+.container {
+  position: relative; /* Pastikan konten tetap di atas */
+  z-index: 1;
+}
+
+
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  background-color: transparent;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+.table th {
+  border-bottom: 2px solid black; /* Garis bawah header tabel menjadi hitam dan lebih tebal */
+  background-color: #C0E5B7;
+}
+
+.table td {
+  border-bottom: 1px solid black; /* Garis antar baris tabel menjadi hitam */
+}
+
+.table-bordered {
+  border: 2px solid black; /* Mengatur border tabel menjadi hitam */
 }
 
 .table th,
@@ -451,6 +489,8 @@ header {
   padding: 0.75rem;
   vertical-align: middle;
   text-align: center;
+  font-weight: bold; /* Membuat teks lebih tebal */
+  color: black;
 }
 
 .table-bordered {
@@ -473,95 +513,96 @@ header {
 
 
 /* Pelaporan CSS */
-/* Container Utama */
-.page-pelaporan {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-/* Container Swiper */
-.swiper {
-  width: 100%;
-  max-width: 600px;
-  padding: 20px;
-}
-
-/* Slide Form */
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  height: auto;
-}
-
-/* Slide Form */
+/* Background untuk judul */
 .swiper-slide h2 {
   position: relative;
   z-index: 2;
-  background-color: #C0E5B7; 
-  display: inline-block;
-  padding: 0 100px; /* Memberi jarak untuk garis */
+  background-color: #C0E5B7; /* Warna hijau lembut */
+  border: 2px solid black; /* Border hitam untuk visibilitas */
+  padding: 0 40px; /* Jarak di sisi kiri dan kanan teks */
+  font-weight: bold;
+  font-size: 24px;
+  color: black; /* Warna teks hitam */
 }
 
-.form-container-pelaporan {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  text-align: center;
+/* Page Pelaporan */
+.page-pelaporan {
+  position: relative;
+  z-index: 1; /* Berada di atas background */
   width: 100%;
-  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hindari elemen form keluar dari page */
+}
+
+/* Form Container */
+.form-container-pelaporan {
+  position: relative; /* Untuk memastikan form tetap berada di tempatnya */
+  background: rgba(255, 255, 255, 0.9); /* Transparansi putih */
+  border: 2px solid black; /* Tambahkan border */
+  border-radius: 16px;
+  padding: 40px; /* Tambahkan padding untuk membuat form lebih tinggi */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
+  max-width: 700px; /* Tingkatkan lebar maksimal dari 600px ke 700px */
+  width: 95%; /* Lebar responsif, tingkatkan dari 90% menjadi 95% */
+  min-height: 200px; /* Menambahkan tinggi minimal agar form lebih panjang */
+  margin: 0 auto; /* Buat form selalu berada di tengah secara horizontal */
+  text-align: center; /* Ratakan isi di tengah */
+  z-index: 2; /* Pastikan form tidak menghalangi elemen lain */
+}
+
+/* Input Form */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="file"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black; /* Border hitam */
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 /* Tombol Navigasi */
-.navigation-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
 button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.prev-btn {
-  background-color: #29593D;
-  color: #000000;
-}
-
+.prev-btn,
 .next-btn,
 .submit-btn {
-  background-color: #29593D;
-  color: #060606;
+  background-color: #29593D; /* Warna hijau gelap */
+  color: white; /* Teks putih */
+  border: 2px solid black; /* Border hitam */
 }
 
-/* Mengatur Posisi Tombol Navigasi Swiper */
-.swiper-button-prev,
-.swiper-button-next {
-  z-index: 10;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.swiper-button-prev {
-  left: 20px;
-}
-
-.swiper-button-next {
-  right: 20px;
+.prev-btn:hover,
+.next-btn:hover,
+.submit-btn:hover {
+  background-color: #3A6B4F; /* Warna hijau sedikit lebih terang */
 }
 
 /* Pagination */
-.swiper-pagination {
-  bottom: 20px;
+.swiper-pagination-bullet {
+  background-color: black; /* Warna hitam untuk titik pagination */
+  opacity: 1;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: #29593D; /* Hijau gelap untuk titik aktif */
+}
+
+/* Sidebar Fix */
+.sidebar {
+  position: relative;
+  z-index: 3; /* Pastikan sidebar berada di atas elemen lainnya */
+}

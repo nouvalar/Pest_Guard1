@@ -25,7 +25,7 @@
 
 
             <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto" >
+            <ul class="navbar-nav ml-auto">
 
                 <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                 <li class="nav-item dropdown no-arrow d-sm-none">
@@ -51,12 +51,14 @@
                 </li>
 
                 <!-- Nav Item - Alerts -->
-                <li class="nav-item dropdown no-arrow mx-1"  >
+                <li class="nav-item dropdown no-arrow mx-1">
                     <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-bell fa-fw" style="color: #000000;" ></i>
+                        <i class="fas fa-bell fa-fw" style="color: #000000;"></i>
                         <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">1</span>
+                        @if (isset($navbarReminders) && $navbarReminders->count() > 0)
+                            <span class="badge badge-danger badge-counter">{{ $navbarReminders->count() }}</span>
+                        @endif
                     </a>
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -271,7 +273,7 @@
                 margin-bottom: 15px;
                 font-weight: bold;
             }
-            
+
             .dropdown-item:active,
             .dropdown-item.active {
                 background-color: #C0E5B7 !important;

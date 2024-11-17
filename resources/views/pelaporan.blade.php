@@ -5,15 +5,16 @@
 @endsection
 
 @section('content')
+    <div class="bg-blur"></div>
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-    <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <!-- Slider Container -->
-        <div class="page-pelaporan" style="margin-top: -130px; min-height: 100vh;">
+    <div class="page-pelaporan" style="margin-top: -130px; min-height: 100vh;">
+        <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <!-- Slider Container -->
             <div class="swiper form-container-pelaporan">
                 <!-- Wrapper untuk Slide -->
                 <div class="swiper-wrapper">
@@ -108,7 +109,7 @@
                 <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
+    </div>
     </form>
 
     <script>
