@@ -58,6 +58,17 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
     Route::get('/bookmark', function () {
         return view('bookmark'); // Halaman bookmark
     })->name('bookmark');
+
+    Route::get('/card/{id}', function ($id) {
+        // Validasi apakah ID dalam rentang 1-9
+        if ($id < 1 || $id > 9) {
+            abort(404); // Tampilkan halaman 404 jika ID tidak valid
+        }
+    
+        // Return view dinamis sesuai ID
+        return view("card.card{$id}-detail");
+    });
+    
 });
 
 

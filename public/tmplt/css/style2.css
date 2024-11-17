@@ -606,3 +606,143 @@ button {
   position: relative;
   z-index: 3; /* Pastikan sidebar berada di atas elemen lainnya */
 }
+
+/* Scrollable Main Content */
+.scrollable-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 70px);
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Card Layout */
+.card-wrapper {
+  margin-top: 20px;
+  padding: 20px;
+  margin-left: 270px; /* Menghindari sidebar */
+  margin-right: 20px;
+  overflow-y: auto; /* Membuat konten bisa di-scroll */
+  max-height: calc(100vh - 100px); /* Menghindari overlap dengan navbar */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan animasi */
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gambar Card */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Animasi pada gambar */
+}
+
+/* Efek zoom pada gambar saat hover */
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* Menghindari card tertutup navbar */
+body {
+  padding-top: 70px;
+}
+
+.bg-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .card-wrapper {
+      margin-left: 0;
+      padding: 10px;
+  }
+
+  .card-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Petunjuk CSS */
+/* Khusus container untuk card */
+.custom-container {
+  margin-left: 250px; /* Menghindari overlap dengan sidebar */
+  padding: 20px;
+  max-height: calc(100vh - 100px); /* Batasi tinggi kontainer */
+  overflow-y: auto; /* Aktifkan scroll untuk konten yang panjang */
+  background-color: #C0E5B7; /* Warna latar untuk pembeda */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid card */
+.custom-card-grid .custom-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Efek hover */
+}
+
+/* Elemen card */
+.custom-card-body {
+  padding: 20px;
+}
+
+.custom-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.custom-card-subtitle {
+  font-size: 14px;
+  color: #777;
+}
+
+.custom-card-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.custom-card-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.custom-card-link:hover {
+  text-decoration: underline;
+}
+
