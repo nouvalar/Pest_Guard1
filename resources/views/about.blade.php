@@ -3,6 +3,7 @@
 @section('title', 'About Us')
 
 @section('content')
+    <div class="bg-blur"></div>
     <div class="about-section">
         <div class="about-text">
             <h1>About Us</h1>
@@ -11,7 +12,8 @@
                 mengelola penggunaan pestisida secara lebih bijaksana dan bertanggung jawab.
             </p>
             <!-- Button "See More" -->
-            <a href="{{ route('login') }}" class="btn btn-success" style="padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            <a href="{{ route('login') }}" class="btn btn-success"
+                style="padding: 10px 20px; border-radius: 5px; font-weight: bold;">
                 See More
             </a>
         </div>

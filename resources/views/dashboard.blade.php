@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+    <div class="bg-blur"></div>
     <div class="dashboard-container">
         <div class="hero-section">
             <div class="hero-background"></div>
