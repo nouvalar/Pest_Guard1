@@ -9,14 +9,28 @@
     <div class="container mt-5 position-relative">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title">Card Title 1</h1>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. 
-                    Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. 
-                    Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. 
-                    Egestas integer eget aliquet nibh praesent. 
-                    In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac..</p>
-                <a href="/petunjuk" class="btn btn-primary">Back to Cards</a>
+                {{-- <h1 class="card-title">Insektisida</h1> --}}
+                <p class="card-text" style="text-align: justify;">
+                    <strong>Nama Pestisida:</strong> Imidakloprid, Deltametrin<br><br>
+                    <strong>Tujuan Penggunaan:</strong> Digunakan untuk membasmi hama seperti kutu daun, wereng, ulat api,
+                    dan lalat buah pada tanaman seperti padi, cabai, jeruk, dan kakao.<br><br>
+                    <strong>Dosis yang Direkomendasikan:</strong><br>
+                    - <strong>Imidakloprid:</strong> 2 ml per liter air, efektif untuk hama penghisap.<br>
+                    - <strong>Deltametrin:</strong> 0.5 ml per liter air, efektif untuk ulat dan penggerek batang.<br><br>
+                    <strong>Cara Aplikasi:</strong><br>
+                    - Campurkan insektisida sesuai dosis ke dalam air bersih.<br>
+                    - Semprotkan larutan secara merata ke bagian tanaman, terutama daun dan batang.<br>
+                    - Lakukan penyemprotan pada pagi atau sore hari untuk hasil maksimal.<br><br>
+                    <strong>Catatan Penting:</strong><br>
+                    - Gunakan alat pelindung diri seperti masker dan sarung tangan saat mencampur atau menyemprot.<br>
+                    - Hindari penyemprotan saat angin kencang atau sebelum hujan.<br>
+                    - Perhatikan masa tunggu sebelum panen sesuai petunjuk label untuk keamanan pangan.<br>
+                </p>
+
+
+
+
+                <a href="/petunjuk" class="btn btn-primary">Kembali</a>
             </div>
         </div>
     </div>
@@ -32,8 +46,10 @@
             z-index: 1;
             /* Pastikan di atas background */
             position: relative;
-            margin-left: 260px; /* Tambahkan jarak dari sidebar */
-            padding: 20px; /* Opsional: jarak dalam */
+            margin-left: 260px;
+            /* Tambahkan jarak dari sidebar */
+            padding: 20px;
+            /* Opsional: jarak dalam */
         }
     </style>
 @endsection

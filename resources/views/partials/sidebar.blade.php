@@ -57,8 +57,11 @@
                         <i class="fas fa-bell fa-fw" style="color: #000000;"></i>
                         <!-- Counter - Alerts -->
                         @if (isset($navbarReminders) && $navbarReminders->count() > 0)
-                            <span class="badge badge-danger badge-counter">{{ $navbarReminders->count() }}</span>
+                            <span class="badge badge-danger badge-counter" id="notifBadge">
+                                {{ $navbarReminders->count() }}
+                            </span>
                         @endif
+
                     </a>
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -275,3 +278,35 @@
                 background-color: #C0E5B7 !important;
             }
         </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const notifBadge = document.getElementById('notifBadge');
+
+                if (notifBadge) {
+                    notifBadge.addEventListener('click', function() {
+                        // Hilangkan badge dengan cara menyembunyikannya
+                        notifBadge.style.display = 'none';
+
+                        // Kirim permintaan ke server untuk meng-update status notifikasi
+                        fetch('/mark-notifications-read', {
+                                method: 'POST',
+                                headers: {
+                                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                                        .content,
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    clearNotifications: true
+                                }),
+                            })
+                            .then(response => {
+                                if (!response.ok) {
+                                    console.error('Gagal mengupdate status notifikasi');
+                                }
+                            })
+                            .catch(error => console.error('Terjadi kesalahan:', error));
+                    });
+                }
+            });
+        </script>

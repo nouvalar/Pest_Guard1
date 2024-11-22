@@ -1,12 +1,12 @@
 <footer
     style="background-color: #2E5930; padding: 10px 20px; color: white; font-size: 14px; text-align: center; display: flex; justify-content: space-between; align-items: center; position: fixed; bottom: 0; width: 100%; z-index: 10;">
     <div style="display: flex; align-items: center;">
-        <img src="{{ asset('assets/img/logo1.png') }}" alt="Logo PestGuard"
+        <img src="{{ asset('assets/img/logo-circle.png') }}" alt="Logo PestGuard"
             style="height: 30px; vertical-align: middle; margin-right: 10px; display: inline-block;">
         <strong>PestGuard</strong>
     </div>
     <div style="text-align: center;">
-        <p style="margin: 0;">Jl. Kumbang No. 33<br>16128 Bogor, West Java</p>
+        <p style="margin: 0;">Jl. Kumbang No. 33<br>16128 Bogor, Jawa Barat</p>
     </div>
     <div style="text-align: right;">
         <a href="https://sv.ipb.ac.id" style="color: white; text-decoration: none;">
@@ -14,6 +14,28 @@
         </a>
     </div>
 </footer>
+
+
+{{-- <footer
+    style="background-color: #2E5930; padding: 10px 0; color: white; font-size: 14px; display: flex; justify-content: flex-start; align-items: center; position: fixed; bottom: 0; width: 100%; z-index: 10; margin: 0;">
+    <!-- Bagian kiri -->
+    <div style="display: flex; align-items: center; margin-right: auto; padding-left: 0;">
+        <img src="{{ asset('assets/img/logo-circle.png') }}" alt="Logo PestGuard"
+            style="height: 30px; vertical-align: middle; margin-right: 10px;">
+        <strong>PestGuard</strong>
+    </div>
+    <!-- Bagian tengah -->
+    <div style="text-align: center; margin: 0 auto;">
+        <p style="margin: 0;">Jl. Kumbang No. 33<br>16128 Bogor, Jawa Barat</p>
+    </div>
+    <!-- Bagian kanan -->
+    <div style="text-align: right; padding-right: 10px;"> 
+        <a href="https://sv.ipb.ac.id" style="color: white; text-decoration: none;">
+            <strong>Sekolah Vokasi IPB - Tangguh, Terampil, Berkarakter</strong>
+        </a>
+    </div>
+</footer> --}}
+
 
 <style>
     /* Reset dasar */
@@ -76,4 +98,20 @@
         color: white;
         text-decoration: none;
     }
+
+    footer {
+        margin: 0;
+    }
+
+/*  */
+
+    /* body, html {
+        margin: 0; 
+        padding: 0; 
+    }
+
+    footer {
+        margin: 0;
+        padding: 0;
+    } */
 </style>

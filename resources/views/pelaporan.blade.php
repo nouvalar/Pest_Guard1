@@ -5,128 +5,72 @@
 @endsection
 
 @section('content')
-    <div class="bg-blur"></div>
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-    <div class="page-pelaporan" style="margin-top: -130px; min-height: 100vh;">
-        <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <!-- Slider Container -->
-            <div class="swiper form-container-pelaporan">
-                <!-- Wrapper untuk Slide -->
-                <div class="swiper-wrapper">
-                    <!-- Slide Pertama -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Nama</h2>
-                        <hr>
-                        <input type="text" id="nama" name="nama">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Kedua -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Pelaporan Penggunaan Pestisida</h2>
-                        <hr>
-                        <input type="date" id="tanggal" name="tanggal">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Ketiga -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Jam Penggunaan</h2>
-                        <hr>
-                        <input type="time" id="jam" name="jam">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Keempat -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Nama Pestisida</h2>
-                        <hr>
-                        <input type="text" id="nama_pestisida" name="nama_pestisida">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Kelima -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Jenis Pestisida</h2>
-                        <hr>
-                        <input type="text" id="jenis_pestisida" name="jenis_pestisida">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Keenam -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Dosis/Jumlah</h2>
-                        <hr>
-                        <input type="text" id="dosis" name="dosis">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide Ketujuh -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Catatan Tambahan</h2>
-                        <hr>
-                        <input type="text" id="catatan" name="catatan">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button class="swiper-button-next next-btn"></button>
-                        </div>
-                    </div>
-
-                    <!-- Slide kedelapan -->
-                    <div class="swiper-slide">
-                        <h2 style="color: black; font-weight: bold;">Upload Dokumen</h2>
-                        <hr>
-                        <input type="file" id="document" name="document">
-                        <div class="navigation-buttons">
-                            <button class="swiper-button-prev prev-btn"></button>
-                            <button type="submit" class="submit-btn">Submit</button>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
+    <div class="container1">
+        @if (session('success'))
+            <div class="alert alert-success alert-fixed">
+                {{ session('success') }}
             </div>
-    </div>
-    </form>
+        @endif
 
-    <script>
-        const swiper = new Swiper('.swiper', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: false,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            autoHeight: true,
-            allowTouchMove: false,
-        });
-    </script>
+        <form action="{{ route('pelaporan.store') }}" method="POST" enctype="multipart/form-data"
+            class="p-4 bg-white rounded shadow">
+            @csrf
+            <h2 class="text-center mb-4" style="color: black; font-weight: bold;">Form Pelaporan</h2>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" id="nama" name="nama" class="form-control"
+                        placeholder="Masukkan Nama Anda">
+                </div>
+                <div class="col-md-6">
+                    <label for="tanggal" class="form-label">Tanggal</label>
+                    <input type="date" id="tanggal" name="tanggal" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="jam" class="form-label">Jam Penggunaan</label>
+                    <input type="time" id="jam" name="jam" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label for="nama_pestisida" class="form-label">Nama Pestisida</label>
+                    <input type="text" id="nama_pestisida" name="nama_pestisida" class="form-control"
+                        placeholder="Masukkan Nama Pestisida">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="jenis_pestisida" class="form-label">Jenis Pestisida</label>
+                    <input type="text" id="jenis_pestisida" name="jenis_pestisida" class="form-control"
+                        placeholder="Masukkan Jenis Pestisida">
+                </div>
+                <div class="col-md-6">
+                    <label for="dosis" class="form-label">Dosis/Jumlah</label>
+                    <input type="text" id="dosis" name="dosis" class="form-control"
+                        placeholder="Masukkan Dosis/Jumlah">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="catatan" class="form-label">Catatan Tambahan</label>
+                    <textarea id="catatan" name="catatan" rows="3" class="form-control" placeholder="Masukkan Catatan Jika Ada"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="document" class="form-label">Upload Dokumen</label>
+                    <input type="file" id="document" name="document" class="form-control">
+                </div>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
 @endsection

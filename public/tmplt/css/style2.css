@@ -489,182 +489,47 @@ body {
 
 /* Pelaporan CSS */
 
-/* Background untuk judul */
-.swiper-slide h2 {
-  position: relative;
-  z-index: 2;
-  background-color: #C0E5B7; /* Warna hijau lembut */
-  border: 2px solid black; /* Border hitam untuk visibilitas */
-  padding: 0 40px; /* Jarak di sisi kiri dan kanan teks */
-  font-weight: bold;
-  font-size: 24px;
-  color: black; /* Warna teks hitam */
+/* Jarak dari navbar dan footer */
+.container1 {
+  margin-top: 80px; /* Jarak dari navbar */
+  margin-left: 200px; /* Lebar sidebar */
+  margin-right: 0; /* Hilangkan margin kanan */
+  width: calc(100% - 170px); /* Ambil seluruh lebar layar dikurangi sidebar */
+  background-color: white; /* Tambahkan latar belakang putih */
+  border-radius: 8px; /* Sudut membulat */
+  padding: 20px; /* Tambahkan padding di dalam form */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+  position: relative; /* Pastikan elemen tetap pada konteks */
+  z-index: 1; /* Beri prioritas elemen di atas */
 }
 
-/* Page Pelaporan */
-.page-pelaporan {
-  position: relative;
-  z-index: 1; /* Berada di atas background */
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Hindari elemen form keluar dari page */
-}
-
-/* Form Container */
-.form-container-pelaporan {
-  position: relative; /* Untuk memastikan form tetap berada di tempatnya */
-  background: rgba(255, 255, 255, 0.9); /* Transparansi putih */
-  border: 2px solid black; /* Tambahkan border */
-  border-radius: 16px;
-  padding: 40px; /* Tambahkan padding untuk membuat form lebih tinggi */
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
-  max-width: 700px; /* Tingkatkan lebar maksimal dari 600px ke 700px */
-  width: 95%; /* Lebar responsif, tingkatkan dari 90% menjadi 95% */
-  min-height: 200px; /* Menambahkan tinggi minimal agar form lebih panjang */
-  margin: 0 auto; /* Buat form selalu berada di tengah secara horizontal */
-  text-align: center; /* Ratakan isi di tengah */
-  z-index: 2; /* Pastikan form tidak menghalangi elemen lain */
-}
-
-/* Input Form */
-input[type="text"],
-input[type="date"],
-input[type="time"],
-input[type="file"] {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid black; /* Border hitam */
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-/* Tombol Navigasi */
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.prev-btn,
-.next-btn,
-.submit-btn {
-  background-color: #29593D; /* Warna hijau gelap */
-  color: white; /* Teks putih */
-  border: 2px solid black; /* Border hitam */
-}
-
-.prev-btn:hover,
-.next-btn:hover,
-.submit-btn:hover {
-  background-color: #3A6B4F; /* Warna hijau sedikit lebih terang */
-}
-
-/* Pagination */
-.swiper-pagination-bullet {
-  background-color: black; /* Warna hitam untuk titik pagination */
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #29593D; /* Hijau gelap untuk titik aktif */
-}
-
-/* Sidebar Fix */
-.sidebar {
-  position: relative;
-  z-index: 3; /* Pastikan sidebar berada di atas elemen lainnya */
-}
-
-/* Scrollable Main Content */
-.scrollable-content {
-  overflow-y: auto;
-  max-height: calc(100vh - 70px);
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Card Layout */
-.card-wrapper {
-  margin-top: 20px;
-  padding: 20px;
-  margin-left: 270px; /* Menghindari sidebar */
-  margin-right: 20px;
-  overflow-y: auto; /* Membuat konten bisa di-scroll */
-  max-height: calc(100vh - 100px); /* Menghindari overlap dengan navbar */
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan animasi */
-}
-
-/* Hover Effect */
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Gambar Card */
-.card-img-top {
-  height: 180px;
-  object-fit: cover;
-  transition: transform 0.3s ease; /* Animasi pada gambar */
-}
-
-/* Efek zoom pada gambar saat hover */
-.card:hover .card-img-top {
-  transform: scale(1.1);
-}
-
-/* Menghindari card tertutup navbar */
-body {
-  padding-top: 70px;
-}
-
-.bg-blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Responsif */
+/* Responsif untuk layar kecil */
 @media (max-width: 768px) {
-  .card-wrapper {
-      margin-left: 0;
-      padding: 10px;
-  }
-
-  .card-container {
-      grid-template-columns: 1fr;
+  .container1 {
+    margin-left: 10px; /* Kurangi margin kiri di layar kecil */
+    margin-right: 10px; /* Kurangi margin kanan di layar kecil */
+    width: calc(100% - 20px); /* Ambil seluruh lebar dengan margin kecil */
   }
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
-  .card-container {
-      grid-template-columns: repeat(2, 1fr);
-  }
+.alert-fixed {
+  position: fixed; /* Agar selalu terlihat di layar */
+  top: 70px; /* Jarak dari atas layar */
+  left: 50%; /* Letakkan di tengah secara horizontal */
+  transform: translateX(-50%); /* Pusatkan secara sempurna */
+  z-index: 1050; /* Pastikan berada di atas elemen lain */
+  width: auto; /* Sesuaikan lebar secara otomatis */
+  max-width: 90%; /* Batasi lebar maksimum pada layar kecil */
+  padding: 15px 20px; /* Tambahkan jarak dalam notifikasi */
+  background-color: #d4edda; /* Warna hijau untuk alert success */
+  color: #155724; /* Warna teks untuk alert success */
+  border: 1px solid #c3e6cb; /* Border alert success */
+  border-radius: 8px; /* Sudut membulat */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
 }
+
+
+
 
 
 /* Petunjuk CSS */

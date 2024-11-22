@@ -11,19 +11,20 @@
             @php
                 $cards = [
                     1 => [
-                        'title' => 'Card title 1',
-                        'subtitle' => 'Subtitle 1',
-                        'text' => 'This is the text for card 1.',
+                        'title' => 'Insektisida',
+                        'subtitle' => 'Imidakloprid, Deltametrin',
+                        'text' => 'Insektisida adalah zat kimia yang digunakan untuk membunuh atau mengendalikan serangga hama pada tanaman, melindungi hasil panen, dan meningkatkan produktivitas pertanian secara efektif dan efisien.',
                     ],
                     2 => [
-                        'title' => 'Card title 2',
-                        'subtitle' => 'Subtitle 2',
-                        'text' => 'This is the text for card 2.',
+                        'title' => 'Fungisida',
+                        'subtitle' => 'Mankozeb, Propikonazol',
+                        'text' => 'Fungisida adalah zat kimia yang digunakan untuk mengendalikan atau membunuh jamur penyebab penyakit pada tanaman, melindungi hasil panen, dan meningkatkan produktivitas pertanian secara efektif dan efisien. 
+',
                     ],
                     3 => [
-                        'title' => 'Card title 3',
-                        'subtitle' => 'Subtitle 3',
-                        'text' => 'This is the text for card 3.',
+                        'title' => 'Herbisida',
+                        'subtitle' => 'Glifosat, Parakuat',
+                        'text' => 'Herbisida adalah zat kimia yang digunakan untuk mengendalikan atau membunuh gulma atau tumbuhan pengganggu di lahan pertanian, melindungi tanaman utama, dan meningkatkan hasil pertanian secara efisien.',
                     ],
                     4 => [
                         'title' => 'Card title 4',
@@ -63,10 +64,20 @@
                 <div class="col">
                     <div class="custom-card h-100">
                         <div class="custom-card-body">
-                            <h5 class="custom-card-title">{{ $card['title'] }}</h5>
+                            {{-- <h5 class="custom-card-title">{{ $card['title'] }}</h5> --}}
+
+                            <h5 class="custom-card-title" style="font-size: 26px; font-weight: bold; color: #29593D;">
+                                {{ $card['title'] }}
+                            </h5>
+                            
                             <h6 class="custom-card-subtitle mb-2 text-muted">{{ $card['subtitle'] }}</h6>
-                            <p class="custom-card-text">{{ $card['text'] }}</p>
-                            <a href="/card/{{ $loop->index + 1 }}" class="custom-card-link">Another link</a>
+                            {{-- <p class="custom-card-text">{{ $card['text'] }}</p> --}}
+
+                            <p class="custom-card-text" style="text-align: justify;">
+                                {{ $card['text'] }}
+                            </p>
+                            
+                            <a href="/card/{{ $loop->index + 1 }}" class="custom-card-link">Cek Detailnya</a>
                         </div>
                     </div>
                 </div>

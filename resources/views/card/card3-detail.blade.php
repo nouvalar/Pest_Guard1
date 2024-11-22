@@ -9,14 +9,24 @@
     <div class="container mt-5 position-relative">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title">Card Title 3</h1>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. 
-                    Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. 
-                    Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. 
-                    Egestas integer eget aliquet nibh praesent. 
-                    In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac..</p>
-                <a href="/petunjuk" class="btn btn-primary">Back to Cards</a>
+                {{-- <h1 class="card-title">Card Title 3</h1> --}}
+                <p class="card-text" style="text-align: justify;">
+                    <strong>Nama Pestisida:</strong> Glifosat, Parakuat<br><br>
+                    <strong>Tujuan Penggunaan:</strong> Digunakan untuk mengendalikan gulma atau tumbuhan pengganggu di lahan pertanian, melindungi tanaman utama, dan meningkatkan hasil pertanian.<br><br>
+                    <strong>Dosis yang Direkomendasikan:</strong><br>
+                    - <strong>Glifosat:</strong> 2-4 liter per hektar.<br>
+                    - <strong>Parakuat:</strong> 2-3 liter per hektar.<br><br>
+                    <strong>Cara Aplikasi:</strong><br>
+                    - Larutkan herbisida sesuai dosis dalam tangki semprot.<br>
+                    - Semprotkan langsung ke gulma yang tumbuh di sekitar tanaman utama.<br>
+                    - Lakukan penyemprotan pada pagi atau sore hari untuk hasil maksimal.<br><br>
+                    <strong>Catatan Penting:</strong><br>
+                    - Gunakan alat pelindung diri seperti masker, sarung tangan, dan pelindung mata.<br>
+                    - Hindari penyemprotan saat cuaca buruk, seperti hujan atau angin kencang.<br>
+                    - Pastikan untuk mengikuti petunjuk dosis dan masa tunggu pada label untuk keamanan hasil panen.<br>
+                </p>
+                
+                <a href="/petunjuk" class="btn btn-primary">Kembali</a>
             </div>
         </div>
     </div>

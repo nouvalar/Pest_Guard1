@@ -71,8 +71,6 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
     
 });
 
-
-
 Route::middleware(['auth', 'userakses:admin'])->group(function () {
     Route::get('/admin/reports', [AdminController::class, 'showReports'])->name('admin.reports');
     Route::post('/admin/reports/{id}/verify', [AdminController::class, 'verifyReport'])->name('admin.reports.verify');

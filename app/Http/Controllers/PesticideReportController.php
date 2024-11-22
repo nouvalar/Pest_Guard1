@@ -51,7 +51,7 @@ class PesticideReportController extends Controller
             ->get()
             ->map(function ($reminder) use ($currentDate) {
                 $reminderDate = Carbon::parse($reminder->tanggal . ' ' . $reminder->jam);
-                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addMinutes(1))
+                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addMinutes(2))
                     ? 'Terlaksana'
                     : 'Belum Terlaksana';
                 return $reminder;

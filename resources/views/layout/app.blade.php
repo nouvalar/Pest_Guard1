@@ -11,6 +11,9 @@
 
     <title>PestGuard</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/logo-circle.png') }}">
+
     <!-- Custom fonts for this template-->
     <link href="{{ asset('tmplt/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
@@ -28,7 +31,7 @@
 <body id="page-top">
 
     <!-- Header -->
-    @include('partials.navbar') {{-- Navbar akan dimasukkan di sini --}}
+    @include('partials.navbar')
 
     <!-- Main Content -->
     <div class="container-fluid">
