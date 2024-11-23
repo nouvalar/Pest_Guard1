@@ -56,10 +56,22 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bell fa-fw" style="color: #000000;"></i>
                         <!-- Counter - Alerts -->
-                        @if (isset($navbarReminders) && $navbarReminders->count() > 0)
-                            <span class="badge badge-danger badge-counter" id="notifBadge">
-                                {{ $navbarReminders->count() }}
-                            </span>
+                        @if (isset($navbarReminders))
+                            @php
+                                $readNotifications = session('notificationRead', []); // Default: array kosong
+                                $unreadNotifications = isset($navbarReminders)
+                                    ? $navbarReminders->filter(function ($reminder) use ($readNotifications) {
+                                        return is_array($readNotifications) &&
+                                            !in_array($reminder->id, $readNotifications);
+                                    })
+                                    : collect();
+                            @endphp
+
+                            @if ($unreadNotifications->count() > 0)
+                                <span class="badge badge-danger badge-counter" id="notifBadge">
+                                    {{ $unreadNotifications->count() }}
+                                </span>
+                            @endif
                         @endif
 
                     </a>
@@ -288,7 +300,7 @@
                         // Hilangkan badge dengan cara menyembunyikannya
                         notifBadge.style.display = 'none';
 
-                        // Kirim permintaan ke server untuk meng-update status notifikasi
+                        // Kirim permintaan ke server untuk menandai notifikasi sebagai dibaca
                         fetch('/mark-notifications-read', {
                                 method: 'POST',
                                 headers: {
@@ -296,9 +308,6 @@
                                         .content,
                                     'Content-Type': 'application/json',
                                 },
-                                body: JSON.stringify({
-                                    clearNotifications: true
-                                }),
                             })
                             .then(response => {
                                 if (!response.ok) {

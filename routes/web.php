@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PesticideReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,8 @@ Route::post('/login', [LoginController::class, 'login'])->name('login.submit');
 
 Route::get('/register', [RegisController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisController::class, 'register'])->name('register.submit');
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'userakses:user'])->group(function () {
     // Halaman utama untuk user
@@ -64,11 +67,22 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
         if ($id < 1 || $id > 9) {
             abort(404); // Tampilkan halaman 404 jika ID tidak valid
         }
-    
+
         // Return view dinamis sesuai ID
         return view("card.card{$id}-detail");
     });
+
+    Route::post('/mark-notifications-read', function (Request $request) {
+        $readNotifications = session('notificationRead', []);
     
+        // Ambil semua ID notifikasi dari navbarReminders
+        $allNotifications = \App\Models\PesticideReport::where('user_id', auth()->id())->pluck('id')->toArray();
+    
+        // Gabungkan notifikasi baru yang belum ada di session
+        session(['notificationRead' => array_unique(array_merge($readNotifications, $allNotifications))]);
+    
+        return response()->json(['success' => true]);
+    });    
 });
 
 Route::middleware(['auth', 'userakses:admin'])->group(function () {

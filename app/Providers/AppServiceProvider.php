@@ -21,18 +21,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Mengambil pengingat untuk navbar di setiap view
         view()->composer('*', function ($view) {
-            $currentDate = Carbon::now();
-            $navbarReminders = PesticideReport::where('user_id', auth()->id()) // Filter berdasarkan user yang login
-                ->get()
-                ->filter(function ($reminder) use ($currentDate) {
-                    $reminderDate = Carbon::parse($reminder->tanggal . ' ' . $reminder->jam);
-                    return $currentDate->lessThan($reminderDate->addMinutes(1)); // Menggunakan 1 menit untuk uji coba
-                });
+            if (auth()->check()) {
+                $currentDate = Carbon::now();
 
-            // Memberikan data navbarReminders ke semua view
-            $view->with('navbarReminders', $navbarReminders);
+                $navbarReminders = PesticideReport::where('user_id', auth()->id())
+                    ->get()
+                    ->filter(function ($reminder) use ($currentDate) {
+                        $reminderDate = Carbon::parse($reminder->tanggal . ' ' . $reminder->jam);
+                        return $currentDate->lessThanOrEqualTo($reminderDate);
+                    });
+
+                $view->with('navbarReminders', $navbarReminders);
+            } else {
+                $view->with('navbarReminders', collect()); // Kosongkan jika user belum login
+            }
         });
     }
 }
