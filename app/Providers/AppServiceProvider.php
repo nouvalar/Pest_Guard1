@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
                 $view->with('navbarReminders', $navbarReminders);
             } else {
-                $view->with('navbarReminders', collect()); // Kosongkan jika user belum login
+                $view->with('navbarReminders', collect()); 
             }
         });
     }

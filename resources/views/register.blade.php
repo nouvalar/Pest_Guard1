@@ -6,23 +6,19 @@
     <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* Terapkan font Poppins Semi-Bold */
         body {
             font-family: 'Poppins', sans-serif;
         }
 
-        h2,
-        strong {
-            font-weight: 600;
-            /* Semi-Bold */
+        h2, strong {
+            font-weight: 600; 
         }
     </style>
 </head>
 
-
     <body class="register-body">
         <div class="register-page">
-            <div class="form-box">
+            <div class="login-box">
                 <div style="text-align: center;"><h2><strong>Daftar</strong></h2></div>
 
                 <form action="{{ route('register.submit') }}" method="POST">
@@ -53,7 +49,7 @@
 
                     <div class="input-group">
                         <label for="no_tlp">Nomor Telepon</label>
-                        <input type="text" id="no_tlp" name="no_tlp" placeholder="Contoh:  081272453356" required
+                        <input type="text" id="no_tlp" name="no_tlp" placeholder="Contoh: 081272453356" required
                             style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
 
@@ -63,7 +59,7 @@
                             required style="width: 100%; padding: 10px; box-sizing: border-box;">
                     </div>
                     <button type="submit" class="register-btn"
-                        style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Buat Akun</button>
+                        style="width: 100%; padding: 10px; background-color: #8AC184; color: white; border: none; border-radius: 5px; cursor: pointer;">Buat Akun</button>
                 </form>
             </div>
         </div>

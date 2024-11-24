@@ -11,20 +11,21 @@
             <div class="card-body">
                 {{-- <h1 class="card-title">Insektisida</h1> --}}
                 <p class="card-text" style="text-align: justify;">
-                    <strong>Nama Pestisida:</strong> Metaldehida, Mesurol<br><br>
-                    <strong>Tujuan Penggunaan:</strong> Mengendalikan moluska seperti siput atau bekicot yang sering merusak tanaman dengan memakan daun, batang, atau bagian tanaman lainnya. Kehadiran moluska dapat mengurangi hasil panen dan merusak kualitas tanaman.<br><br>
+                    <strong>Nama Pestisida:</strong> Asam Gibberelat, Etefon<br><br>
+                    <strong>Tujuan Penggunaan:</strong> Memodifikasi pertumbuhan tanaman untuk mempercepat pembungaan, meningkatkan kualitas buah, atau mempercepat pemasakan pada tanaman hortikultura.<br><br>
                     <strong>Dosis yang Direkomendasikan:</strong><br>
-                    - <strong>Metaldehida:</strong> 3-5 kg per hektar.<br>
-                    - <strong>Mesurol:</strong> 4 kg per hektar.<br><br>
+                    - <strong>Asam Gibberelat:</strong> 10-20 ppm (part per million) dalam larutan semprot.<br>
+                    - <strong>Etefon:</strong> 100-200 ppm untuk mempercepat pemasakan buah.<br><br>
                     <strong>Cara Aplikasi:</strong><br>
-                    - Taburkan butiran moluskisida di sekitar tanaman yang rentan atau di area tempat siput banyak ditemukan.<br>
-                    - Hindari penempatan butiran terlalu dekat dengan batang tanaman untuk mencegah risiko kerusakan tanaman.<br>
-                    - Aplikasi sebaiknya dilakukan pada pagi atau sore hari untuk meningkatkan efektivitas.<br><br>
+                    - Larutkan regulator sesuai dosis dalam tangki semprot.<br>
+                    - Semprotkan larutan secara merata ke bagian tanaman yang membutuhkan, seperti bunga atau buah.<br>
+                    - Aplikasi sebaiknya dilakukan pada pagi hari untuk hasil terbaik.<br><br>
                     <strong>Catatan Penting:</strong><br>
-                    - Simpan moluskisida di tempat yang aman dan jauh dari jangkauan anak-anak atau hewan peliharaan.<br>
-                    - Gunakan alat pelindung diri seperti sarung tangan selama aplikasi.<br>
-                    - Pastikan mengikuti petunjuk label untuk keamanan dan efektivitas penggunaan.<br>
+                    - Hindari aplikasi berlebih yang dapat merusak tanaman.<br>
+                    - Gunakan alat pelindung diri saat mencampur dan menyemprot.<br>
+                    - Ikuti petunjuk label untuk keamanan dan efektivitas penggunaan.<br>
                 </p>
+                
                 
                 <a href="/petunjuk" class="btn btn-primary">Kembali</a>
             </div>

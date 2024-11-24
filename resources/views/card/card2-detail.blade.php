@@ -6,10 +6,10 @@
 
 @section('content')
     <div class="bg-blur"></div>
-    <div class="container mt-5 position-relative">
+    <div class="container">
         <div class="card">
             <div class="card-body">
-                {{-- <h1 class="card-title">Card Title 2</h1> --}}
+                {{-- <h1 class="card-title">Insektisida</h1> --}}
                 <p class="card-text" style="text-align: justify;">
                     <strong>Nama Pestisida:</strong> Mankozeb, Propikonazol<br><br>
                     <strong>Tujuan Penggunaan:</strong> Mengendalikan penyakit jamur pada tanaman seperti tomat, kentang, cabai, dan pepaya.<br><br>
@@ -20,26 +20,28 @@
                     - Hindari penyemprotan saat hujan atau angin kencang.<br>
                     - Ikuti petunjuk dosis dan masa tunggu pada label.<br>
                 </p>
-                
-                
+
                 <a href="/petunjuk" class="btn btn-primary">Kembali</a>
             </div>
         </div>
     </div>
 
     <style>
-        /* Mempastikan card tetap terlihat jelas */
+        /* Flexbox untuk memusatkan card */
+        .container {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            min-height: 100vh; /* Tinggi minimal 100% layar */
+        }
+
         .container .card {
             background: white;
-            border-radius: 8px;
-            /* Opsional: sudut membulat */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            /* Opsional: bayangan */
-            z-index: 1;
-            /* Pastikan di atas background */
-            position: relative;
-            margin-left: 260px; /* Tambahkan jarak dari sidebar */
-            padding: 20px; /* Opsional: jarak dalam */
+            border-radius: 12px; /* Opsional: sudut membulat */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: bayangan */
+            z-index: 1; /* Pastikan di atas background */
+            width: 970px; /* Lebar card tetap */
+            padding: 30px; /* Opsional: jarak dalam */
         }
     </style>
 @endsection

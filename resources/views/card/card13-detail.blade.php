@@ -11,20 +11,21 @@
             <div class="card-body">
                 {{-- <h1 class="card-title">Insektisida</h1> --}}
                 <p class="card-text" style="text-align: justify;">
-                    <strong>Nama Pestisida:</strong> Metaldehida, Mesurol<br><br>
-                    <strong>Tujuan Penggunaan:</strong> Mengendalikan moluska seperti siput atau bekicot yang sering merusak tanaman dengan memakan daun, batang, atau bagian tanaman lainnya. Kehadiran moluska dapat mengurangi hasil panen dan merusak kualitas tanaman.<br><br>
+                    <strong>Nama Pestisida:</strong> Tembaga Sulfat, Tributilin<br><br>
+                    <strong>Tujuan Penggunaan:</strong> Digunakan untuk mencegah pertumbuhan organisme laut, seperti teritip dan alga, pada permukaan kapal atau struktur yang terendam air.<br><br>
                     <strong>Dosis yang Direkomendasikan:</strong><br>
-                    - <strong>Metaldehida:</strong> 3-5 kg per hektar.<br>
-                    - <strong>Mesurol:</strong> 4 kg per hektar.<br><br>
+                    - <strong>Tembaga Sulfat:</strong> 2-5 gram per meter persegi permukaan.<br>
+                    - <strong>Tributilin:</strong> 1-2 gram per meter persegi permukaan.<br><br>
                     <strong>Cara Aplikasi:</strong><br>
-                    - Taburkan butiran moluskisida di sekitar tanaman yang rentan atau di area tempat siput banyak ditemukan.<br>
-                    - Hindari penempatan butiran terlalu dekat dengan batang tanaman untuk mencegah risiko kerusakan tanaman.<br>
-                    - Aplikasi sebaiknya dilakukan pada pagi atau sore hari untuk meningkatkan efektivitas.<br><br>
+                    - Larutkan antifouling sesuai dosis dalam cat atau larutan pelapis.<br>
+                    - Aplikasikan pada permukaan yang membutuhkan perlindungan, seperti lambung kapal.<br>
+                    - Biarkan kering sebelum kontak dengan air.<br><br>
                     <strong>Catatan Penting:</strong><br>
-                    - Simpan moluskisida di tempat yang aman dan jauh dari jangkauan anak-anak atau hewan peliharaan.<br>
-                    - Gunakan alat pelindung diri seperti sarung tangan selama aplikasi.<br>
-                    - Pastikan mengikuti petunjuk label untuk keamanan dan efektivitas penggunaan.<br>
+                    - Gunakan alat pelindung diri selama aplikasi untuk mencegah kontak langsung.<br>
+                    - Hindari penggunaan di lingkungan sensitif ekologis.<br>
+                    - Ikuti petunjuk label untuk efektivitas penggunaan.<br>
                 </p>
+                
                 
                 <a href="/petunjuk" class="btn btn-primary">Kembali</a>
             </div>

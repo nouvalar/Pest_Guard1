@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PesticidePetunjukController;
 use App\Http\Controllers\PesticideReportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisController;
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// untuk function fpdf
+Route::get('/admin/reports/download-pdfs', [AdminController::class, 'downloadPDF'])->name('admin.reports.download-pdf');
+
 
 Route::get('/', function () {
     return view('dashboard'); // Halaman awal sebelum login
@@ -54,23 +59,25 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
     })->name('pelaporan');
     Route::post('/pelaporan', [PesticideReportController::class, 'store'])->name('pelaporan.store');
 
-    Route::get('/petunjuk', function () {
-        return view('petunjuk'); // Halaman petunjuk
-    })->name('petunjuk');
+    // Routes untuk user
+    Route::get('/petunjuk', [PesticidePetunjukController::class, 'index'])->name('petunjuk');
+    Route::get('/petunjuk/{id}', [PesticidePetunjukController::class, 'show'])->name('petunjuk.detail');
 
     Route::get('/bookmark', function () {
         return view('bookmark'); // Halaman bookmark
     })->name('bookmark');
 
-    Route::get('/card/{id}', function ($id) {
-        // Validasi apakah ID dalam rentang 1-9
-        if ($id < 1 || $id > 9) {
-            abort(404); // Tampilkan halaman 404 jika ID tidak valid
+    Route::get('/petunjuk/{id}', function ($id) {
+        if ($id >= 1 && $id <= 15) {
+            // Arahkan ke file statis
+            return view("card.card{$id}-detail");
+        } else {
+            // Arahkan ke data dinamis
+            $petunjuk = \App\Models\PesticidePetunjuk::findOrFail($id);
+            return view("card.card-detail", ['petunjuk' => $petunjuk]);
         }
-
-        // Return view dinamis sesuai ID
-        return view("card.card{$id}-detail");
-    });
+    })->name('card.detail');
+    
 
     Route::post('/mark-notifications-read', function (Request $request) {
         $readNotifications = session('notificationRead', []);
@@ -83,9 +90,18 @@ Route::middleware(['auth', 'userakses:user'])->group(function () {
     
         return response()->json(['success' => true]);
     });    
-});
+}); 
 
 Route::middleware(['auth', 'userakses:admin'])->group(function () {
-    Route::get('/admin/reports', [AdminController::class, 'showReports'])->name('admin.reports');
-    Route::post('/admin/reports/{id}/verify', [AdminController::class, 'verifyReport'])->name('admin.reports.verify');
+    Route::get('/admin/base', [AdminController::class, 'admin'])->name('base');
+    Route::get('/admin/admin_reports', [AdminController::class, 'showReports'])->name('admin.reports');
+    Route::post('/admin/admin_reports/{id}/verify', [AdminController::class, 'verifyReport'])->name('admin.reports.verify');
+
+
+    Route::get('/admin/admin_petunjuk', [PesticidePetunjukController::class, 'adminIndex'])->name('admin.petunjuk.index');
+    Route::get('/admin/admin_addPetunjuk', [PesticidePetunjukController::class, 'create'])->name('admin.petunjuk.create');
+    Route::post('/admin/admin_petunjuk', [PesticidePetunjukController::class, 'store'])->name('admin.petunjuk.store');
+    Route::get('/admin/admin_petunjuk/{id}/edit', [PesticidePetunjukController::class, 'edit'])->name('admin.petunjuk.edit');
+    Route::put('/admin/admin_petunjuk/{id}', [PesticidePetunjukController::class, 'update'])->name('admin.petunjuk.update');
+    Route::delete('/admin/admin_petunjuk/{id}', [PesticidePetunjukController::class, 'destroy'])->name('admin.petunjuk.destroy');    
 });

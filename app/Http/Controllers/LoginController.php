@@ -37,7 +37,7 @@ class LoginController extends Controller
             Session::put('user_role', $user->role); // Simpan hak akses pengguna dalam sesi
 
             if (Auth::user()->role == 'admin') {
-                return redirect('/admin/reports');
+                return redirect('/admin/base');
             } elseif (Auth::user()->role == 'user') {
                 return redirect('/home');
             }

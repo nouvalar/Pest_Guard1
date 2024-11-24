@@ -47,11 +47,11 @@ class PesticideReportController extends Controller
     public function showReminders()
     {
         $currentDate = Carbon::now();
-        $reminders = PesticideReport::where('user_id', auth()->id()) // Filter berdasarkan user login
+        $reminders = PesticideReport::where('user_id', auth()->id())
             ->get()
             ->map(function ($reminder) use ($currentDate) {
                 $reminderDate = Carbon::parse($reminder->tanggal . ' ' . $reminder->jam);
-                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addMinutes(2))
+                $reminder->status = $currentDate->greaterThanOrEqualTo($reminderDate->addMinutes(1))
                     ? 'Terlaksana'
                     : 'Belum Terlaksana';
                 return $reminder;

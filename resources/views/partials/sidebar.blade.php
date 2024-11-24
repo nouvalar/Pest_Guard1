@@ -19,7 +19,8 @@
                 <div class="sidebar-brand-text mx-3 d-flex align-items-center">
                     <img src="{{ asset('assets/img/logo1.png') }}" alt="Logo" class="sidebar-logo"
                         style="width: 50px; height: 50px; margin-right: -12px;"> <!-- mengatur logo dan text -->
-                    <span style="color: #29593D; font-size: 24px; font-weight: bold;">PestGuard</span>
+                    {{-- <span style="color: #29593D; font-size: 24px; font-weight: bold;">PestGuard</span> --}}
+                    <span class="font-poppins" style="color: #29593D; font-size: 24px; font-weight: bold;">PestGuard</span>
                 </div>
             </a>
 
@@ -78,9 +79,7 @@
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="alertsDropdown">
-                        <h6 class="dropdown-header" style="background-color: #C0E5B7;">
-                            Alerts Center
-                        </h6>
+                        <h6 class="dropdown-header" style="background-color: #C0E5B7; border: none; outline: none;">Alerts Center</h6>
                         @if (isset($navbarReminders) && $navbarReminders->count() > 0)
                             @foreach ($navbarReminders as $reminder)
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -96,10 +95,9 @@
                                 </a>
                             @endforeach
                         @else
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Tidak ada pengingat
-                                baru</a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Tidak ada pengingat baru</a>
                         @endif
-                        <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                       
                     </div>
                     <!-- Nav Item - Messages -->
                 <li class="nav-item dropdown no-arrow mx-1">
@@ -112,18 +110,19 @@
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="messagesDropdown">
-                        <h6 class="dropdown-header" style="background-color: #C0E5B7;">
-                            Message Center
-                        </h6>
+                        {{-- <h6 class="dropdown-header" style="background-color: #C0E5B7;">Message Center</h6> --}}
+                        <h6 class="dropdown-header" style="background-color: #C0E5B7; border: none; outline: none;">Message Center</h6>
+
+
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="dropdown-list-image mr-3">
                                 <img class="rounded-circle" src="{{ asset('tmplt/img/undraw_profile_1.svg') }}"
                                     alt="...">
                                 <div class="status-indicator bg-success"></div>
                             </div>
-                            <div class="font-weight-bold">
+                            <div class="font-weight">
                                 <div class="text-truncate">Sudahkah Anda melakukan penyemprotan Pestisida?</div>
-                                <div class="small text-gray-500">Agung · 58m</div>
+                                <div class="small text-gray-500">Agung · 47m</div>
                             </div>
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -133,8 +132,8 @@
                                 <div class="status-indicator"></div>
                             </div>
                             <div>
-                                <div class="text-truncate">Pestisida Jenis Baru!!!</div>
-                                <div class="small text-gray-500">Asep · 1d</div>
+                                <div class="text-truncate">Pestisida jenis baru! Ampuh untuk membunuh hama cabai.</div>
+                                <div class="small text-gray-500">Salman · 21h</div>
                             </div>
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
@@ -144,9 +143,8 @@
                                 <div class="status-indicator bg-warning"></div>
                             </div>
                             <div>
-                                <div class="text-truncate">Pestisida yang lalu membuat tanaman menjadi kurang
-                                    berkualitas</div>
-                                <div class="small text-gray-500">Morgan · 2d</div>
+                                <div class="text-truncate">Pestisida yang lalu membuat tanaman menjadi kurang berkualitas</div>
+                                <div class="small text-gray-500">Khansa · 3d</div>
                             </div>
                         </a>
                         <a class="dropdown-item text-center small text-gray-500" href="#">Read More
@@ -193,7 +191,7 @@
                     <li>
                         <a href="/pengingat">
                             <i class="fas fa-clock"></i>
-                            <span>Pengingat Jadwal Pestisida</span>
+                            <span>Riwayat Laporan Pestisida</span>
                         </a>
                     </li>
                     <li>
@@ -240,6 +238,35 @@
                 padding-top: 70px;
                 /* Jarak dari navbar */
             }
+
+            .font-poppins {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+            }
+
+
+
+            .dropdown-header {
+                border: none; /* Menghapus border */
+                outline: none; /* Menghapus outline */
+            }
+
+
+   
+            .custom-sidebar-item {
+                margin-left: 10px; /* Sesuaikan jarak untuk item tertentu */
+                margin-right: 10px;
+            }
+
+
+            .sidebar-menu ul li {
+                margin-left: 12px;
+                margin-right: 12px;
+                margin-bottom: 15px;
+                background-color: #C0E5B7;
+                border-radius: 10px;
+            }
+
 
             .sidebar-menu ul {
                 list-style: none;

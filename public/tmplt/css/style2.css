@@ -7,6 +7,28 @@ body {
     overflow-x: hidden;
 }
 
+
+
+/* SIDEBAR GA MEPET */
+.custom-sidebar-item {
+  margin-left: 10px; /* Sesuaikan jarak untuk item tertentu */
+  margin-right: 10px;
+}
+
+
+/* Tambahkan jarak di kiri dan kanan tombol */
+.sidebar-menu ul li {
+  margin-left: 10px; /* Jarak dari tepi kiri sidebar */
+  margin-right: 10px; /* Jarak dari tepi kanan sidebar */
+  margin-bottom: 15px; /* Jarak antar tombol (opsional) */
+  background-color: #C0E5B7; /* Warna latar tetap */
+  border-radius: 5px; /* Tetap ada rounding pada tombol */
+}
+
+
+
+
+
 /* Dashboard */
 .dashboard-container {
     font-family: "Nunito", sans-serif;
@@ -143,7 +165,7 @@ body.login-body {
   height: 100vh;
   background: url("/assets/img/bgwide.jpeg") no-repeat center center fixed;
   background-size: cover;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   padding-top: 60px; /* Berikan ruang untuk navbar */
 }
 

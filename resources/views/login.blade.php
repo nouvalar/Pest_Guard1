@@ -6,7 +6,6 @@
     <!-- Import Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <style>
-        /* Terapkan font Poppins Semi-Bold */
         body {
             font-family: 'Poppins', sans-serif;
         }
@@ -16,8 +15,6 @@
         }
     </style>
 </head>
-
-
 
     <body class="login-body">
         <div class="login-wrapper">
