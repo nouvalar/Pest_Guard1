@@ -49,6 +49,9 @@
     html,
     body {
         height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     /* Tata letak fleksibel untuk memastikan footer di bawah */
@@ -62,6 +65,7 @@
     main {
         flex: 1;
         overflow: auto;
+        padding-bottom: 100px;
         /* Pastikan konten bisa di-scroll jika panjang */
         padding: 20px;
         background-color: #f9f9f9;
@@ -69,6 +73,7 @@
 
     /* Footer selalu di bawah */
     footer {
+        z-index: 100;
         background-color: #2E5930;
         color: white;
         text-align: center;
@@ -103,11 +108,11 @@
         margin: 0;
     }
 
-/*  */
+    /*  */
 
     /* body, html {
-        margin: 0; 
-        padding: 0; 
+        margin: 0;
+        padding: 0;
     }
 
     footer {

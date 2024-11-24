@@ -586,3 +586,54 @@ body {
   text-decoration: underline;
 }
 
+
+/* Bookmark */
+/* Wrapper Utama */
+.card-layout-wrapper {
+  margin-left: 260px; /* Sesuaikan dengan lebar sidebar */
+  padding: 80px 20px 20px 20px; /* Tambahkan padding atas (80px) untuk menghindari overlap dengan navbar */
+  height: calc(100vh - 80px); /* Hitung tinggi setelah dikurangi navbar */
+  overflow-y: auto; /* Scrollable secara vertikal */
+  background-color: #f9f9f9; /* Warna latar belakang */
+}
+
+/* Grid Layout */
+.card-layout-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Maksimal 3 card per baris */
+  gap: 20px;
+}
+
+/* Card Item */
+.card-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-item-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-item-body {
+  padding: 15px;
+}
+
+.card-item-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-item-text {
+  font-size: 14px;
+  color: #555;
+}

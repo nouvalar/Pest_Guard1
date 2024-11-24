@@ -62,12 +62,12 @@
         @include('partials.sidebar')
     @endif
 
-    @include('partials.footer')
-
     <!-- Main Content -->
     <div class="container-fluid">
         @yield('content')
     </div>
+
+    @include('partials.footer')
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('tmplt/vendor/jquery/jquery.min.js') }}"></script>
